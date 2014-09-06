@@ -19,7 +19,7 @@ typedef struct {
 } student;
 
 array_t *array_create(int capacity,int sz);
-array_t *array_create_default();
+array_t *array_create_default(int sz);
 void array_push(array_t *arr, void *elt);
 int array_isempty(array_t *arr);
 void array_clear(array_t *arr);
