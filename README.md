@@ -1,6 +1,6 @@
 # Algorithms and Data Structures
 
-This repository contains most basic algorithms and data structures using generic method implemenation in c , which provides unit testing , functional and time complexity tests for them to guarantee that there are less obvious bugs  .
+This repository contains most basic algorithms and data structures using generic method implementation in c , which provides unit testing , functional and time complexity tests to guarantee that there are less obvious bugs  .
 
 ## Introduction
 There are a lot of useful references for the implementations . Here is the reference list which helps me a lot .
