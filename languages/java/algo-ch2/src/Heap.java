@@ -1,5 +1,4 @@
 import com.stdlib.*;
-
 public class Heap {
 	@SuppressWarnings("rawtypes")
 	public static void sort(Comparable[] a){
