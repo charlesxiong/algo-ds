@@ -293,17 +293,17 @@ public class BinarySearch {
 		int cnt=0;		
 		for(int i=0;i<=a.length-4;i++)
 			for(int j=i+1;j<=a.length-3;j++) { 
-			int low=j+1,high=a.length-1;
-			while(low<high){
-				if(a[low]+a[high] > key-a[i]-a[j]) high--;
-				else if(a[low]+a[high] < key-a[i]-a[j]) low++;
-				else {
-					StdOut.println(a[i]+" "+a[j]+" "+a[low]+" "+a[high]);
-					cnt++;
-					low++;
-					high--;
+				int low=j+1,high=a.length-1;
+				while(low<high){
+					if(a[low]+a[high] > key-a[i]-a[j]) high--;
+					else if(a[low]+a[high] < key-a[i]-a[j]) low++;
+					else {
+						StdOut.println(a[i]+" "+a[j]+" "+a[low]+" "+a[high]);
+						cnt++;
+						low++;
+						high--;
+					}
 				}
-			}
 	
 		}
 		return cnt;
