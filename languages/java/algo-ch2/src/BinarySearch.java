@@ -257,7 +257,7 @@ public class BinarySearch {
 	 * ThreeSum问题-无需要求数组有序，所需时间复杂度为O(n^2)
 	 * 第一个数迭代取出，后两个数做首尾指针遍历
 	 */
-	public static int ThreeSumSorted(int[] a,int key){
+	public static int ThreeSumUnSorted(int[] a,int key){
 		if(a.length<3) throw new IllegalArgumentException("数组长度至少为3！");
 		if(key<Integer.MIN_VALUE || key >Integer.MAX_VALUE) throw new IllegalArgumentException("给定值溢出！");
 		Arrays.sort(a); //O(n*lgn)
@@ -286,7 +286,7 @@ public class BinarySearch {
 	 * 前两个数迭代取出，后两个数做首尾指针遍历
 	 * 推广至K-Sum问题，所需时间复杂度为O(n^(K-1))
 	 */
-	public static int FourSumSorted(int[] a,int key){
+	public static int FourSumUnSorted(int[] a,int key){
 		if(a.length<4) throw new IllegalArgumentException("数组长度至少为4！");
 		if(key<Integer.MIN_VALUE || key >Integer.MAX_VALUE) throw new IllegalArgumentException("给定值溢出！");
 		Arrays.sort(a);//O(nlgn)
@@ -316,7 +316,7 @@ public class BinarySearch {
 		//testBruteForce();
 		//testRunTimeRatio();
 		int[] a={1,2,3,4,5,6,7};
-		StdOut.println(FourSumSorted(a,12));
+		StdOut.println(FourSumUnSorted(a,12));
 		
 		
 		
