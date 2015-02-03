@@ -25,7 +25,6 @@ public class ResizingArrayQueue<Item>  implements Iterable<Item> {
 	}
 	
 	
-	@SuppressWarnings("unchecked")
 	private void resize(int capacity){
 		assert capacity >=N;
 		Item[] temp=(Item[])new Object[capacity];
