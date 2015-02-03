@@ -12,13 +12,9 @@ import com.stdlib.*;
  *
  */
 public class ResizingArrayStack<Item> implements Iterable<Item> {
-	 private Item[] a;
-	 private int N; //元素个数
+	private Item[] a;
+	private int N; //元素个数
 
-	/**
-	 * 
-	 */
-	@SuppressWarnings("unchecked")
 	public ResizingArrayStack() {
 		a=(Item[])new Object[2];
 		N=0;
