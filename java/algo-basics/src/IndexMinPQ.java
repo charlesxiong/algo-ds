@@ -8,12 +8,12 @@ import com.stdlib.*;
  */
 public class IndexMinPQ<Key extends Comparable<Key> > implements Iterable<Integer>{
 	private int maxN;
-    private int N; //PQ中实际的元素个数
-    private int[] pq; //索引二叉堆，由1开始-元素位置对应的索引号,索引的取值范围0-maxN-1
-    private int[] qp; //索引对应的元素位置，也就是qp[i]的值即i在pq[]中的位置(pq[qp[i]]=qp[pq[i]]=i)
-    private Key[] keys; //存储元素的数组
+        private int N; //PQ中实际的元素个数
+    	private int[] pq; //索引二叉堆，由1开始-元素位置对应的索引号,索引的取值范围0-maxN-1
+    	private int[] qp; //索引对应的元素位置，也就是qp[i]的值即i在pq[]中的位置(pq[qp[i]]=qp[pq[i]]=i)
+    	private Key[] keys; //存储元素的数组
     
-	@SuppressWarnings("unchecked")
+
 	public IndexMinPQ(int maxN) {
 		if(maxN <0) throw new IllegalArgumentException("The size should be non-negative");
 		keys=(Key[])new Comparable[maxN+1]; //0号位置不使用
@@ -31,7 +31,7 @@ public class IndexMinPQ<Key extends Comparable<Key> > implements Iterable<Intege
 		return N;
 	}
 	
-    /*是否存在索引i的元素*/
+        /*是否存在索引i的元素*/
 	public boolean contains(int i){
 		if(i<0 || i >=maxN) throw new IndexOutOfBoundsException();
 		return qp[i]!=-1;
