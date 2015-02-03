@@ -8,8 +8,8 @@ import com.stdlib.*;
  * 思路：针对所有比中位数小的元素维持一个最大堆，所有比中位数大的元素维持一个最小堆
  * 通过如下的插入操作设计保证最大堆和最小堆的元素个数之差保持在1内，中位数即在两个堆顶元素里面产生
  * 如果两堆大小相同，取两堆顶元素的平均值；否则，取元素个数更大的堆的堆顶元素
- * @author charles
  *
+ * @author charles
  */
 public class DynamicMedian {
 	private MaxPQ<Integer> maxHeap;
