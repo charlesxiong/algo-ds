@@ -105,8 +105,6 @@ float compute_opt_bst(float *p,float *q,int n){
 
 /**
  * DP之四边形不等式和斜率优化
- * 
- *
  *
  */
 void compute_opt_bst_improve(float *p,float *q,int n);
@@ -147,14 +145,14 @@ int main(){
 	/**
 	 * bst1.txt 数据
 	 * p: 0.15 0.10 0.05 0.10 0.20
-     * q: 0.05 0.10 0.05 0.05 0.05 0.10
+         * q: 0.05 0.10 0.05 0.05 0.05 0.10
 	 */
 	test_bst("bst1.txt"); 
 
 	/**
 	 * bst2.txt数据
 	 * 0.04 0.06 0.08 0.02 0.10 0.12 0.14
-     * 0.06 0.06 0.06 0.06 0.05 0.05 0.05 0.05
+         * 0.06 0.06 0.06 0.06 0.05 0.05 0.05 0.05
 	 */
 	test_bst("bst2.txt");
 
