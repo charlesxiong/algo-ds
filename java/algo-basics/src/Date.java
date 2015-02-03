@@ -55,10 +55,6 @@ public class Date implements Comparable<Date> {
 	 * 四年一闰，百年不闰，四百年再闰
 	 */
 	private static boolean isLeapYear(int y){
-//		if(y%400 ==0) return true;
-//		if(y%100==0) return false; //上一个条件不满足且整除100，则是平年
-//		return y%4==0;
-		
 		if((y %400==0) || ((y%4==0) && (y%100!=0)))
 			return true;
 		return false;
