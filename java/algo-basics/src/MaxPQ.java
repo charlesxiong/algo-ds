@@ -38,7 +38,6 @@ public class MaxPQ<Key> implements Iterable<Key> {
 	}
 	
 	/*用数组中的元素创建一个优先队列*/
-	@SuppressWarnings("unchecked")
 	public MaxPQ(Key[] a){
 		N=a.length;
 		pq=(Key[])new Object[N+1];
