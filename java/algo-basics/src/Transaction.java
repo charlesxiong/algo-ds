@@ -6,7 +6,6 @@ public class Transaction implements Comparable<Transaction> {
 	private final Date when;  //日期
 	private final double amount; //数量
 	
-	
 	public Transaction(String who,Date when ,double amount) {
 		if(Double.isInfinite(amount) || Double.isNaN(amount))
 			throw new IllegalArgumentException("Amount cannot be NaN or infinite");
