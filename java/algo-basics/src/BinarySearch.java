@@ -21,6 +21,7 @@ public class BinarySearch {
 	}
     
 	/*****************题目1： 在N个数中找出三个和为0的整数元组的数量**********************************/
+	
 	/**
 	 * 在N个数中找出三个和为0的整数元组的数量
 	 * 立方级别的暴力算法
@@ -119,7 +120,7 @@ public class BinarySearch {
 	}
 	
 	/*
-	 *  16K很长时间不出结果
+	 *      16K很长时间不出结果
 	 * 	1Kints.txt test begins: 
 		70
 		time cost: 0.2
@@ -148,7 +149,7 @@ public class BinarySearch {
 	
 	
 	/*
-	 *  1Kints.txt test begins: 
+	 *      1Kints.txt test begins: 
 		70
 		time cost: 0.064s
 		
