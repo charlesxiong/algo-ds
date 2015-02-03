@@ -19,8 +19,11 @@ optbst: optbst.o
 
 
 asbline.o: asbline.cpp
+
 chainorder.o: chainorder.cpp
+
 lcs.o: lcs.cpp
+
 optbst.o: optbst.cpp
 
 clean: 
