@@ -130,12 +130,7 @@ public class Date implements Comparable<Date> {
 		StdOut.println(today.next().isAfter(today));
 		StdOut.println(today.isBefore(today.next()));
 		
-//		Date birthday=new Date(10,16,1971);
-//		StdOut.println(birthday);
-//		for(int i=0;i<10;i++) {
-//			birthday=birthday.next();
-//			StdOut.println(birthday);
-//		}
+
 		
 		
 		
