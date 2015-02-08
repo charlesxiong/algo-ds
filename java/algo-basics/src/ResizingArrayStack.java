@@ -4,6 +4,7 @@ import com.stdlib.*;
 
 
 /**
+ *  LIFO Stack(resizing array)
  *  利用动态数组实现栈
  *  Java中有Stack,是宽接口，定义了很多不适合栈的方法，不建议使用
  *  以API作为设计高效算法和数据结构的起点，因而设计只含有几个操作的接口明显比设计含有许多操作的接口更简单
