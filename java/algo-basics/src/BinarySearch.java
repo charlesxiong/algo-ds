@@ -313,16 +313,11 @@ public class BinarySearch {
 	
 	
 	public static void main(String[] args) {
-		 //testFast();
+		//testFast();
 		//testBruteForce();
 		//testRunTimeRatio();
 		int[] a={1,2,3,4,5,6,7};
 		StdOut.println(FourSumUnSorted(a,12));
-		
-		
-		
-		
-
 	}
 
 }
