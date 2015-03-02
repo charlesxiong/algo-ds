@@ -3,7 +3,7 @@
 /**
  * 二维数组中，每行从左向右递增排序，每列从上到下递增排序
  * 给定一个二维数组和一个整数，判断整数是否在数组中
- * 
+ * 思路：以具体的二维数组右上角开始分析，进行二分查找的筛选
  */
 bool find(int *arr,int row,int column,int number){
 	bool found=false;
