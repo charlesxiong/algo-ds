@@ -4,6 +4,7 @@ import com.stdlib.*;
 /**
  * 设计一个数据结构用于动态查找中位数，它支持以下几种操作
  * 对数时间内插入元素，常数时间内找到中位数并在对数时间内删除中位数
+ * 中位数：大小为奇数，取中间值;大小为偶数，取两中间元素的平均值
  * 
  * 思路：针对所有比中位数小的元素维持一个最大堆，所有比中位数大的元素维持一个最小堆
  * 通过如下的插入操作设计保证最大堆和最小堆的元素个数之差保持在1内，中位数即在两个堆顶元素里面产生
@@ -21,6 +22,8 @@ public class DynamicMedian {
 		minHeap=new MinPQ<Integer>();
 		
 	}
+
+
 
 	public boolean isEmpty(){
 		return maxHeap.isEmpty()&&minHeap.isEmpty();
