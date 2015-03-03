@@ -8,7 +8,7 @@ import com.stdlib.*;
 
 /**
  * @author charles
- *
+ * 泛型的单链表实现
  */
 public class LinkedList<Item> implements Iterable<Item> {
 	private Node first;//链表头节点
