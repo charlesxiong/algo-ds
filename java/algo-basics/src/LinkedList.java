@@ -1,7 +1,5 @@
 import java.util.*;
 
-import com.stdlib.*;
-
 /**
  * 
  */
@@ -180,10 +178,10 @@ public class LinkedList<Item> implements Iterable<Item> {
 		ll.insertAtEnd("to");
 		ll.insertAtEnd("hello");
 		for(String i: ll)
-			StdOut.println(i);
+			System.out.println(i);
 		ll.removeAtkPos(3);
 		for(String i: ll)
-			StdOut.println(i);
+			System.out.println(i);
 	}
 
 	
