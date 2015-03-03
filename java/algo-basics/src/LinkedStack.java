@@ -28,6 +28,8 @@ public class LinkedStack<Item> implements Iterable<Item> {
 		return N;
 	}
 	
+
+	
 	public Item peek(){
 		if(isEmpty()) throw new NoSuchElementException("栈为空");
 		return first.item;
