@@ -35,6 +35,8 @@ public class ResizingArrayQueue<Item>  implements Iterable<Item> {
 		rear=N;
 	}
 	
+
+	
 	public void enqueue(Item item){
 		if(N==a.length) resize(a.length*2);
 		a[rear++]=item;
