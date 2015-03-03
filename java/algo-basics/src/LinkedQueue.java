@@ -30,6 +30,7 @@ public class LinkedQueue<Item> implements Iterable<Item> {
 		return N;
 	}
 	
+
 	
 	public Item peek(){
 		if(isEmpty()) throw new NoSuchElementException("队列为空");
