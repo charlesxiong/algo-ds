@@ -1,4 +1,5 @@
 import java.util.*;
+
 import com.stdlib.*;
 
 /**
@@ -40,6 +41,7 @@ public class LinkedList<Item> implements Iterable<Item> {
 		cur.item=x;
 		cur.next=oldfirst;
 		first=cur;
+		N++;
 	}
 	
 	public void insertAtEnd(Item x){
@@ -59,19 +61,20 @@ public class LinkedList<Item> implements Iterable<Item> {
 			 cur.next=null;
 			 temp.next=cur;
 		}
+		N++;
 	}
 	
-	public Node removeAtHead(){
+	public void removeAtHead(){
 		if(first==null) 
 			throw new NoSuchElementException("不能删除空链表");
 		else {//非空链表
 			Node node=first;
 			first=first.next;
-			return node;
+			N--;
 		} 
 	}
 	
-	public Node removeAtEnd(){
+	public void removeAtEnd(){
 		if(first==null) 
 			throw new NoSuchElementException("不能删除空链表");
 		else {
@@ -82,25 +85,87 @@ public class LinkedList<Item> implements Iterable<Item> {
 					last=last.next;
 				} //找到尾节点及尾节点的前一个节点
 				if(prev==null){ //只有一个节点
-					
+					first=null;
+				} else{
+					prev.next=null;
 				}
-				Node node=last;
-				prev.next=null;
-				return node;
+				N--;
+				
 		}
 	}
 	
+	/*删除链表中的第k个节点，如果存在的话*/
+	public void removeAtkPos(int k){
+		if(k<=0 || k>N)
+			throw new IllegalArgumentException("k必须在１－Ｎ范围内！");
+		
+		int num=1;//计数初始为１
+		Node cur=first;
+		/*找到第k-1个节点*/
+		while(cur!=null && num < k-1) {
+			cur=cur.next;
+			num++;
+		}//返回的cur即第k－１个节点
+		cur.next=cur.next.next;
+		N--;
+	}
 	
-	public void print_node(){
-		for(Node temp=first;temp!=null;temp=temp.next)
-			StdOut.println(temp.item);
+	/*查找第k个节点，如果存在的话*/
+	public Node find(int k){
+		if(k<=0 || k>N)
+			throw new IllegalArgumentException("k必须在１－Ｎ范围内！");
+		int num=0;
+		Node cur=first;
+		while(cur!=null){
+			num++;
+			if(num==k)
+				break;
+			cur=cur.next;
+		}
+		return cur;
+	}
+	
+	/*查找链表中某节点的数据域是否存在给定值，若存在，返回true,否则返回false*/
+	public boolean find(Item key){
+		boolean result=false;
+		Node cur=first;
+		while(cur!=null){
+			if(cur.item==key){
+				result=true;
+				break;
+			}
+			cur=cur.next;
+		}
+		return result;
 	}
 
 	@Override
 	public Iterator<Item> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new LinkedListIterator();
 	}
+	
+	private class LinkedListIterator implements Iterator<Item> {
+		private Node cur=first;
+		@Override
+		public boolean hasNext() {
+			return cur!=null;
+		}
+
+		@Override
+		public Item next() {
+			if(!hasNext()) throw new NoSuchElementException();
+			Item key=cur.item;
+			cur=cur.next;
+			return key;
+		}
+
+		@Override
+		public void remove() {
+			throw new UnsupportedOperationException();
+		}
+		
+	} 
 	
 	/**
 	 * @param args
@@ -110,13 +175,15 @@ public class LinkedList<Item> implements Iterable<Item> {
 		LinkedList<String> ll=new LinkedList<String>();
 		ll.insertAtHead("to");
 		ll.insertAtHead("hello");
-		ll.insertAtEnd("world");
+    	ll.insertAtEnd("world");
 		ll.insertAtEnd("i");
 		ll.insertAtEnd("to");
 		ll.insertAtEnd("hello");
-		ll.print_node();
-		StdOut.println(ll.removeAtHead().item);;
-		//ll.print_node();
+		for(String i: ll)
+			StdOut.println(i);
+		ll.removeAtkPos(3);
+		for(String i: ll)
+			StdOut.println(i);
 	}
 
 	
