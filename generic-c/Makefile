@@ -1,28 +1,27 @@
 CC=gcc
-CPP=g++
 CFLAGS=-Wall -g
-EXECUTABLE=array genarray linklist  stack genstack queue linkedqueue 
+EXEC=array genarray linklist stack genstack queue linkedqueue 
 
-all: $(EXECUTABLE)
+all: $(EXEC)
 
-array: arraylist.o testarraylist.c
-	$(CC) $(CFLAGS) arraylist.o testarraylist.c -o array
-genarray: genarraylist.o testgenarraylist.c
-	$(CC) $(CFLAGS) genarraylist.o testgenarraylist.c -o genarray
-linklist: linklist.o testlist.c 
-	$(CC) $(CFLAGS) linklist.o testlist.c -o linklist
-stack: stack.o teststack.c
-	$(CC) $(CFLAGS) stack.o teststack.c -o stack
-genstack: genstack.o testgenstack.c
-	$(CC) $(CFLAGS) genstack.o testgenstack.c -o genstack
-queue: queue.o testqueue.c
-	 $(CC) $(CFLAGS) queue.o testqueue.c -o queue
-linkedqueue: linkedqueue.o testlinkedqueue.c
-	 $(CC) $(CFLAGS) linkedqueue.o testlinkedqueue.c -o linkedqueue
+# 　bench测试使用自动变量
+array: testarraylist.c arraylist.o 
+	$(CC) $(CFLAGS) -o $@ $^
+genarray: testgenarraylist.c genarraylist.o 
+	$(CC) $(CFLAGS) -o $@ $^
+linklist: testlist.c  linklist.o 
+	$(CC) $(CFLAGS) -o $@ $^
+stack: teststack.c stack.o 
+	$(CC) $(CFLAGS) -o $@ $^
+genstack: testgenstack.c genstack.o 
+	$(CC) $(CFLAGS) -o $@ $^
+queue: testqueue.c queue.o 
+	 $(CC) $(CFLAGS)-o $@ $^
+linkedqueue: testlinkedqueue.c linkedqueue.o 
+	 $(CC) $(CFLAGS) -o $@ $^
 
 
-
-
+# *.o : *.c *.h使用隐含规则
 arraylist.o: arraylist.c arraylist.h
 genarraylist.o: genarraylist.c genarraylist.h
 linkedlist.o: linklist.c linklist.h
@@ -31,5 +30,6 @@ genstack.o: genstack.c genstack.h
 queue.o: queue.c queue.h
 linkedqueue.o: linkedqueue.c linkedqueue.h
 
+.PHONY: clean
 clean:
-	rm -rf *.o *~ $(EXECUTABLE)
+	rm -rf *.o *~ $(EXEC)
