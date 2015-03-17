@@ -4,7 +4,7 @@ EXEC=array genarray linklist stack genstack queue linkedqueue
 
 all: $(EXEC)
 
-# 　bench测试使用自动变量
+
 array: testarraylist.c arraylist.o 
 	$(CC) $(CFLAGS) -o $@ $^
 genarray: testgenarraylist.c genarraylist.o 
@@ -21,7 +21,7 @@ linkedqueue: testlinkedqueue.c linkedqueue.o
 	 $(CC) $(CFLAGS) -o $@ $^
 
 
-# *.o : *.c *.h使用隐含规则
+
 arraylist.o: arraylist.c arraylist.h
 genarraylist.o: genarraylist.c genarraylist.h
 linkedlist.o: linklist.c linklist.h
