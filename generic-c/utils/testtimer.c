@@ -49,7 +49,6 @@ void doubling_ratio(char *alg){
       prev=cur;
       N <<=1;
    }
-   
 }
 
 int main(){
