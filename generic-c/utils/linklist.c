@@ -134,14 +134,18 @@ void *slist_delete_middle(slist_t *l,void *item) {
 				cur=cur->next;
 			}
 		}
-		if(prev==NULL)
-			return slist_delete_begin(l);
-		else {
-			prev->next=cur->next;
-			void *res_item=cur->item;
-			free(cur);
-			l->n--;
-			return res_item;
+		if(cur==NULL){ //该键值不存在
+			return NULL;
+		} else {
+			if(prev==NULL)
+				return slist_delete_begin(l);
+			else {
+				prev->next=cur->next;
+				void *res_item=cur->item;
+				free(cur);
+				l->n--;
+				return res_item;
+			}
 		}
 	} else {
 		return NULL;
