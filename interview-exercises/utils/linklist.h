@@ -2,37 +2,47 @@
 #define _LINKLIST_H_
 
 typedef struct list_node {
-	int data;
+	void *item;
 	struct list_node *next;
 } list_node_t;
 
-　typedef struct slist {
+typedef struct slist {
 	list_node_t *head;
-	//int size;
+	int n;
+	int (*comp)(const void *,const void *);
 } slist_t;
 
-typedef void (*cb)(list_node *cur);
 
-/*设置虚拟头节点*/
-list_node *init_slist(); 
-
-/*分配一个新节点内存，默认可用new list_node()创建*/
-list_node *new_node(int val, list_node *next); 
-
-/*访问链表中的每个节点*/
-void print_node(list_node *cur); 
-
-/*访问整个链表*/
-void print_list(slist_t *slist); 
+/*为单链表分配内存*/
+slist_t *slist_alloc(int (*comp)(const void *,const void *)); 
 
 /*释放整个链表的内存*/
-void destroy_list(list_node *slist);
-　
+void slist_free(slist_t *l);
+
+/*在单链表中查找元素，如果存在，返回对应的值，否则返回NULL*/
+void *slist_find(slist_t *l,void *item);
+
+/*在单链表尾部添加元素*/
+void slist_insert_end(slist_t *l,void *item);
+
+/*在单链表头部添加元素*/
+void slist_insert_begin(slist_t *l,void *item);
+
+/*在单链表尾部删除元素,若存在，返回被删除的元素键值，否则返回NULL*/
+void *slist_delete_end(slist_t *l);
+
+/*在单链表头部删除元素，若存在返回被删除的元素键值，否则返回NULL*/
+void *slist_delete_begin(slist_t *l);
+
+/*在单链表中找到第一个含item值的节点并删除此节点*/
+void *slist_delete_middle(slist_t *l,void *item);
 
 
-
-
-
-
+static inline list_node_t *new_list_node(void *item){
+	list_node_t *node=malloc(sizeof(list_node_t));
+	node->next=NULL;
+	node->item=item;
+	return node;
+} 
 
 #endif
