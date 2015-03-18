@@ -1,10 +1,10 @@
 CC=gcc
 CFLAGS=-Wall -g -O2　
 
-all: testtimer
+all: timer_test
 
 
-testtimer: testtimer.c timer.o 
+timer_test: timer_test.c timer.o 
 	$(CC) -o $@ $^
 
 
