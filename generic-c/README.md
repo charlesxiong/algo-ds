@@ -22,7 +22,7 @@
 它提供了必要的计时操作和常见的基础数据结构，以下均是基于泛型的C实现:
 
 - [计时器](https://github.com/charlesxiong/algo-ds/blob/master/generic-c/utils/timer.c) 
-- 动态数组]
+- 动态数组
 - 单链表
 - 双向链表
 - 栈
