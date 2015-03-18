@@ -1,3 +1,4 @@
+-----
 
 **基于泛型C实现各种数据结构**
 
@@ -13,6 +14,9 @@
 -  测试二叉查找树的操作和时间消耗(测试用例并不全面): [bst_test.c](https://github.com/charlesxiong/algo-ds/blob/master/generic-c/search/bst_test.c)
 
 
+
+-----
+
 **Utils**
 
 它提供了必要的计时操作和常见的基础数据结构，以下均是基于泛型的C实现:
@@ -26,7 +30,7 @@
 - [位示图](http://)
 - [并查集](http://)
 
-
+-----
 
 **Search**
 
