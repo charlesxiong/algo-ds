@@ -121,7 +121,6 @@ void *slist_delete_middle(slist_t *l,void *item) {
 	list_node_t *cur,*prev;
 	int (*comp)(const void *,const void *);
 	comp=l->comp;
-
 	if(l->head) {
 		prev=NULL;
 		cur=l->head;
