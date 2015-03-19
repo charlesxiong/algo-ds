@@ -11,7 +11,6 @@ clockval_t (*getclock)(void)=clock;
 const clockval_t CLOCK_TICK= CLOCKS_PER_SEC;
 #endif
 
-
 /************************************************/
 void stimer_start() {
 	start_time=getclock();
