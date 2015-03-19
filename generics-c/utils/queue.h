@@ -5,7 +5,8 @@
 typedef struct {
 	void *item;
 	int capacity;
-	int top;
+	int front;
+	int rear;
 	int type_size;
 } queue_t;
 
