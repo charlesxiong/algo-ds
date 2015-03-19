@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include <stdbool.h>
 
 bool isSorted(int arr[],int len){
 	int j;
