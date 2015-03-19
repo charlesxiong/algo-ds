@@ -20,6 +20,7 @@ double timetest(char *alg,int n){
    return stimer_time_total();
 }
 
+
 /**
  * 重复测试: 运行大量的测试数，减小系统本身的误差
  * 测试次数越多，每次测试所需的平均时间就越接近于真实的平均数据
