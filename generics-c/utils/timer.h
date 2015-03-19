@@ -9,7 +9,6 @@
 
 #define USE_HI_RES_TIME 0
 
-
 /**
  * 允许用户指定时钟计时函数
  * USE_HI_RES_TIME：　gethrvtime(),时间数据类型为hrtime_t- 在Solaris系统以纳秒级别提供高分辨率的实时计时
