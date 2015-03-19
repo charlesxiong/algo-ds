@@ -30,7 +30,6 @@ void slist_free(slist_t *l){
 	free(l);
 }
 
-
 /*在单链表中查找元素，如果存在，返回对应的值，否则返回NULL*/
 void *slist_find(slist_t *l,void *item) {
 	list_node_t *cur;
