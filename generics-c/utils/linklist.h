@@ -28,6 +28,9 @@ void slist_insert_end(slist_t *l,void *item);
 /*在单链表头部添加元素*/
 void slist_insert_begin(slist_t *l,void *item);
 
+/*在单链表某位置pos添加元素*/
+void slist_insert_middle(slist_t *l,void *item,int pos);
+
 /*在单链表尾部删除元素,若存在，返回被删除的元素键值，否则返回NULL*/
 void *slist_delete_end(slist_t *l);
 
