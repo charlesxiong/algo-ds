@@ -21,8 +21,6 @@ void slist_print(slist_t *l){
 	printf("\n");
 }
 
-
-
 int main(){
 	slist_t *l=slist_alloc(int_cmp);
 	int arr[MAX_LEN];
