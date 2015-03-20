@@ -122,6 +122,7 @@ public class Transaction implements Comparable<Transaction> {
 			StdOut.println(a[i]);
 		StdOut.println();
 		
+		
 		StdOut.println("4 Sorted by Amount: ");
 		Arrays.sort(a,new Transaction.AmountOrder());
 		for(int i=0;i<a.length;i++)
