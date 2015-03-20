@@ -1,4 +1,4 @@
-Turing      6/17/1990   644.08
+Turing      6/17/1990    644.08
 vonNeumann  3/26/2002  4121.85
 Dijkstra    8/22/2007  2678.40
 vonNeumann  1/11/1999  4409.74
