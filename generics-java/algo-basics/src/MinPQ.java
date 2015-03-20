@@ -196,7 +196,6 @@ public class MinPQ<Key> implements Iterable<Key> {
 		public void remove() {
 			throw new UnsupportedOperationException();
 		}
-		
 	}
 	
 	public static void main(String[] args) {
