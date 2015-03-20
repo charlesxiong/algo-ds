@@ -20,6 +20,8 @@ public class LinkedStack<Item> implements Iterable<Item> {
 		N=0;
 	}
 	
+	
+	
 	public  boolean isEmpty(){
 		return first==null;
 	}
