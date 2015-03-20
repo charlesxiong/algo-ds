@@ -16,14 +16,11 @@ public class DynamicMedian {
 	private MaxPQ<Integer> maxHeap;
 	private MinPQ<Integer> minHeap;
 	
-	
 	public DynamicMedian() {
 		maxHeap=new MaxPQ<Integer>();
 		minHeap=new MinPQ<Integer>();
 		
 	}
-
-
 
 	public boolean isEmpty(){
 		return maxHeap.isEmpty()&&minHeap.isEmpty();
@@ -140,6 +137,7 @@ public class DynamicMedian {
 		return ((Comparable<Integer>)x1).compareTo(x2)>0;
 	}
 
+	
 	public static void main(String[] args) {
 		DynamicMedian dm=new DynamicMedian();
 		In input=new In("median-data.txt");
