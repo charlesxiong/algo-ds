@@ -29,9 +29,6 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
 		return N;
 	}
 	
-
-
-	
 	private void resize(int capacity){
 		assert capacity >=N;
 		Item[] temp=(Item[]) new Object[capacity];
