@@ -34,9 +34,7 @@ public class TopKForMinPQ {
 //		    pq.insert(item);
 //		    if(pq.size()>K)
 //		    	pq.delMin();
-		    
-
-		    	
+		     	
 		    /**
 		     * 始终保持优先级队列中只有K个元素，只有当新元素比当前最小元素更大才替换当前堆顶元素
 		     * K=5时完成TopK需要0.006-0.009s，在处理更大的数据集花费时间随即显示出优势
