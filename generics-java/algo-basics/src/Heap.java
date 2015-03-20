@@ -17,7 +17,6 @@ public class Heap {
 			sink(a,i,N);
 	}
 	
-	
 	public static void sink(Comparable[] a,int k,int N){
 		while(2*k <= N){
 			int j=2*k;
