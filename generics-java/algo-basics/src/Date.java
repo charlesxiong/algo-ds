@@ -98,7 +98,6 @@ public class Date implements Comparable<Date> {
 		return hash;
 	}
 	
-
 	
 	/******************************************/
 	/*日期是否在o日期后面*/
@@ -129,11 +128,6 @@ public class Date implements Comparable<Date> {
 		StdOut.println(today.isAfter(today.next()));
 		StdOut.println(today.next().isAfter(today));
 		StdOut.println(today.isBefore(today.next()));
-		
-
-		
-		
-		
 	}
 
 	
