@@ -70,6 +70,7 @@ public class LinkedBag<Item> implements Iterable<Item>{
 			sb.append(item+" ");
 		return sb.toString();
 	}
+	
 
 	/**
 	 * @param args
