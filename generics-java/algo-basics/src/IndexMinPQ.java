@@ -190,8 +190,6 @@ public class IndexMinPQ<Key extends Comparable<Key> > implements Iterable<Intege
 	}
 	/*********************************************************/
 	
-
-
 	public static void main(String[] args) {
 		String[] strings = { "it", "was", "the", "best", "of", "times", "it", "was", "the", "worst" };
 
