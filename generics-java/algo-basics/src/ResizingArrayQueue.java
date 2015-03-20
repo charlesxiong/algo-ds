@@ -16,6 +16,7 @@ public class ResizingArrayQueue<Item>  implements Iterable<Item> {
 		rear=0;
 	}
 	
+	
 	public boolean isEmpty(){
 		return N==0;
 	}
