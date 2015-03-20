@@ -35,7 +35,6 @@ public class Multiway {
 		for(int i=0;i<N;i++)
 			input[i]=new In(filenames[i]);
 		merge(input);
-
 	}
 
 }
