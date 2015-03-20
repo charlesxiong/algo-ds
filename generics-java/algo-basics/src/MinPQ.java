@@ -46,6 +46,7 @@ public class MinPQ<Key> implements Iterable<Key> {
 		return N;
 	}
 	
+	
 	/****************important operations*********************/
 	public void insert(Key x){
 		if(N==pq.length-1) resize(2*pq.length);

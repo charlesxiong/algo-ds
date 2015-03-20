@@ -267,7 +267,6 @@ public class MaxPQ<Key> implements Iterable<Key> {
 		StdOut.println("(" + queue.size()+ " left on queue)");
 		for(String t:queue) //迭代器形式
 			StdOut.println(t);
-	    
 
 	}
 
