@@ -18,6 +18,7 @@ public class ResizingArrayBag<Item> implements Iterable<Item> {
 		N=0;
 	}
 	
+	
 	public boolean isEmpty(){
 		return N==0;
 	}
