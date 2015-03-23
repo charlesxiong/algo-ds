@@ -8,6 +8,8 @@ typedef struct bst_node {
 	struct bst_node *right;
 } bst_node_t;
 
+
+
 /*二叉查找树的结构定义*/
 typedef struct bst {
 	bst_node_t *root;
