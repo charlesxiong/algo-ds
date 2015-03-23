@@ -6,7 +6,6 @@ public class QuickUnionByPathCompresUF {
 	private byte[] rank;//以触点i为根结点的高度(从x到某一个后代的叶结点最长路径上边的数目),这里最长深度为31，不能超出int位数-1
 	private int count; //分量个数
 	
-
 	public QuickUnionByPathCompresUF(int N) {
 		count=N;
 		id=new int[N];
@@ -17,21 +16,11 @@ public class QuickUnionByPathCompresUF {
 		}
 	}
 	
-	public int count(){
-		return count;
-	}
-	
-	public boolean connected(int p,int q){
-		return find(p)==find(q);
-	}
-	
 	/**
 	 *  原始路径下根结点的秩只有1，始终能保证在路径上遇到的所有节点最后都直接链接到了根结点
 	 *  路径压缩但并不改变节点的秩
 	 *  
 	 *  带路径压缩的find()方法，最后得到的是几乎完全扁平化的树
-	 * @param p
-	 * @return 
 	 */
 	public int find(int p){ 
 		while(p!=id[p]){ 
@@ -57,6 +46,14 @@ public class QuickUnionByPathCompresUF {
 		count--;
 	}
 	
+	public int count(){
+		return count;
+	}
+	
+	public boolean connected(int p,int q){
+		return find(p)==find(q);
+	}
+	
 
 
 	/**
@@ -64,9 +61,6 @@ public class QuickUnionByPathCompresUF {
 	 * tinyUF.txt- 10个触点和11个连接
 	 * mediumUF.txt- 625个触点和900条连接
 	 * largeUF.txt- 100万个触点和200万条连接
-	 * 
-	 * 要处理百万级数据的规模，应该选择何种算法
-	 * @param filename
 	 */
 	public static double test(String filename){
 		In in=new In(filename);
