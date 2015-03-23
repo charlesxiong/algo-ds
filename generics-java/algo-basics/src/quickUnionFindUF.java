@@ -96,7 +96,6 @@ public class quickUnionFindUF {
 	 * largeUF.txt- 100万个触点和200万条连接
 	 * 
 	 * 要处理百万级数据的规模，应该选择何种算法
-	 * @param filename
 	 */
 	public static void test(String filename){
 		In in=new In(filename);
