@@ -9,6 +9,8 @@ typedef struct item {
 	int miscs;
 } item_t; //由关键字和杂项数据组成
 
+
+
 /*比较函数-强制类型转换的效果是改变指针的伸缩，不会改变值*/
 int item_cmp(const void *a,const void *b){
 	return ((item_t *)a)->key - ((item_t *)b)->key;
