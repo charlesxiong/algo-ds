@@ -6,6 +6,8 @@
  *  参数3: 指定数组中元素的数目，参数４:  每个元素的长度，size个字节长
  *　　参数5: 一个实现大小比较的函数指针，它将返回正值、0、负值当函数中的第一个参数大于，等于，小于第二个参数
  */
+
+ 
 void *binsearch(const void *key,const void *buf, size_t num,size_t size,
 					int (*comp)(const void *,const void *)) {
 	int low=0,high=num-1;
