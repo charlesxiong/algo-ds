@@ -28,14 +28,6 @@ public class WeightedQuickUnionUF {
 			sz[i]=1;
 	}
 	
-	public int count(){
-		return this.count;
-	}
-	
-	public boolean connected(int p,int q){
-		return find(p)==find(q);
-	}
-	
 	public int find(int p){
 		while(p!=id[p]) p=id[p];
 		return p;
@@ -59,14 +51,20 @@ public class WeightedQuickUnionUF {
 		this.count--;
 	}
 	
+	public int count(){
+		return this.count;
+	}
+	
+	public boolean connected(int p,int q){
+		return find(p)==find(q);
+	}
+	
 	/**
 	 * 3个测试文件:
 	 * tinyUF.txt- 10个触点和11个连接
 	 * mediumUF.txt- 625个触点和900条连接
 	 * largeUF.txt- 100万个触点和200万条连接
 	 * 
-	 * 要处理百万级数据的规模，应该选择何种算法
-	 * @param filename
 	 */
 	public static double test(String filename){
 		In in=new In(filename);
