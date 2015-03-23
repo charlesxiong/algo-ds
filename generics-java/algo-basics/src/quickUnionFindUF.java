@@ -107,7 +107,7 @@ public class quickUnionFindUF {
 			int q=in.readInt();
 			if(uf.connected(p, q)) continue; //如果已经连通，则忽略
 			uf.union(p, q); //合并分量
-			//StdOut.println(p+ " "+q); //打印连接，不用打出已知相连的整数对(不必要)
+			StdOut.println(p+ " "+q); //打印连接，不用打出已知相连的整数对(不必要)
 		}
 		StdOut.println(uf.count() + " components");
 	}
