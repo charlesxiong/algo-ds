@@ -1,7 +1,7 @@
 CC=gcc
 CXX=g++
-CFLAGS= -std=c99 -Wall -O  -g 
-EXECS= 03-findinpartiallysortedmatrix 04-replaceblankinstring 04-extension 05-reverseprintlist
+CFLAGS= -std=c99 -Wall -O -g 
+EXECS= 03-findinpartiallysortedmatrix 04-replaceblankinstring 04-extension 05-reverseprintlist 28-stringpermutation
 
 all: $(EXECS)
 
@@ -18,6 +18,9 @@ utils:
 	$(CC) $(CFLAGS) -o $@ $^
 
 05-reverseprintlist: 05-reverseprintlist.c ./utils/linklist.o
+	$(CC) $(CFLAGS) -o $@ $^
+
+28-stringpermutation: 28-stringpermutation.c 
 	$(CC) $(CFLAGS) -o $@ $^
 
 
