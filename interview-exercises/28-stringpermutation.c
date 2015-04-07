@@ -1,6 +1,21 @@
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * 全排列非递归解法－字典序法
+ * 依照字符集中的字典序关系，从最小字符排列开始，通过循环不断计算当前字符串排列的下一个排列直至达到没有下一个排列
+ * 即可得到全排列,求当前排列的下一个排列思路next_premutaion(STL中已有实现):
+ *
+ * 首先从尾端往前寻找两个相邻元素，记为a、b,找到这样一组相邻元素后
+ * 再从尾端开始往前检验，找到第一个比元素a大的元素c, 将元素a、c对调
+ * 再将b之后(包括b)的元素颠倒排列，即为所求下一个排列集合
+ *
+ * 　递归解法(又可称为回溯解法)
+ *  回溯解法可处理全排列全组合或类似于八皇后问题或如
+ * 　输入两个整数n和m,从数列1,2,3,...,n中随意取几个数，使其和为m,列出所有的组合
+ * 　训练: 二分查找和回溯法
+ */
+
 void swap_str(char *a,char *b){
 	char temp=*a;
 	*a=*b;
@@ -38,9 +53,9 @@ void permutation(char *str,char *pbegin){
 	} else {
 		for(char *cur=pbegin;*cur !='\0';cur++){
 			if(isDuplicate(str,pbegin,cur)==0) {
-				if(*cur!=*pbegin) swap_str(cur,pbegin); 
+				swap_str(cur,pbegin); 
 				permutation(str,pbegin+1);//递归遍历剩余字符串的排列
-				if(*cur!=*pbegin) swap_str(cur,pbegin);
+				swap_str(cur,pbegin);　//*cur==*pbegin时可以省去元素交换操作
 			}
 		}
 	}
@@ -100,7 +115,7 @@ void test_case5(){
 }
 
 
-/*
+/* 方法２:
  * 上面的实现有一缺点就是指针操作容易出错，我们可以改用为下标操作来实现
  *
  * begin表示字符串中的首字符，将字符串分为两部分
@@ -145,7 +160,7 @@ void all_permut(char *str){
 }
 
 void simple_test(){
-	char str[]="abb";
+	char str[]="aaaaa";
 	all_permut(str);
 }
 
