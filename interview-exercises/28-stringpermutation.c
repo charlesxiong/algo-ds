@@ -54,8 +54,8 @@ void permutation(char *str,char *pbegin){
 		for(char *cur=pbegin;*cur !='\0';cur++){
 			if(isDuplicate(str,pbegin,cur)==0) {
 				swap_str(cur,pbegin); 
-				permutation(str,pbegin+1);//递归遍历剩余字符串的排列
-				swap_str(cur,pbegin);　//*cur==*pbegin时可以省去元素交换操作
+				permutation(str,pbegin+1); //递归遍历剩余字符串的排列
+				swap_str(cur,pbegin);//相等时可省去元素交换操作
 			}
 		}
 	}
