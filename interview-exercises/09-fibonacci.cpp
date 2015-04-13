@@ -40,7 +40,7 @@ long long fib_solution2(unsigned int n){
  * 思路: 先定义一个2*2的矩阵类，然后再实现矩阵乘法操作和矩阵方幂操作函数
  */
 
-typedef struct matrix2by2 {
+struct matrix2by2 {
  	long long m00;
  	long long m01;
  	long long m10;
@@ -54,7 +54,7 @@ typedef struct matrix2by2 {
 	) : m00(a),m01(b),m10(c),m11(d){
 		
 	}
-} mat_2by2;
+} ;
 
 
 matrix2by2 matrix_multiply(matrix2by2 m,matrix2by2 n){
