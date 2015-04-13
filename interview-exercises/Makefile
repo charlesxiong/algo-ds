@@ -1,7 +1,8 @@
 CC=gcc
 CXX=g++
 CFLAGS= -std=c99 -Wall -O -g 
-EXECS= 03-findinpartiallysortedmatrix 04-replaceblankinstring 04-extension 05-reverseprintlist 28-stringpermutation
+EXECS= 03-findinpartiallysortedmatrix 04-replaceblankinstring 04-extension 05-reverseprintlist \
+08-minnuminrotatedarray 28-stringpermutation  \
 
 all: $(EXECS)
 
@@ -20,6 +21,9 @@ utils:
 05-reverseprintlist: 05-reverseprintlist.c ./utils/linklist.o
 	$(CC) $(CFLAGS) -o $@ $^
 
+08-minnuminrotatedarray: 08-minnuminrotatedarray.c
+	$(CC) $(CFLAGS) -o $@ $^
+
 28-stringpermutation: 28-stringpermutation.c 
 	$(CC) $(CFLAGS) -o $@ $^
 
@@ -27,4 +31,9 @@ utils:
 .PHONY: clean
 clean:
 	cd ./utils; $(MAKE) clean
+	rm -f *.o
+	$(MAKE) cleanbin
+
+.PHONY: cleanbin
+cleanbin:
 	rm -rf $(EXECS)
