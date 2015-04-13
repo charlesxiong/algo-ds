@@ -1,8 +1,8 @@
 CC=gcc
 CXX=g++
-CFLAGS= -std=c99 -Wall -O -g 
+CFLAGS= -std=c99 -Wall -O2 -g 
 EXECS= 03-findinpartiallysortedmatrix 04-replaceblankinstring 04-extension 05-reverseprintlist \
-08-minnuminrotatedarray 28-stringpermutation  \
+08-minnuminrotatedarray 09-fibonacci 28-stringpermutation  \
 
 all: $(EXECS)
 
@@ -23,6 +23,9 @@ utils:
 
 08-minnuminrotatedarray: 08-minnuminrotatedarray.c
 	$(CC) $(CFLAGS) -o $@ $^
+
+09-fibonacci: 09-fibonacci.cpp
+	$(CXX) -Wall -O2 -g -o $@ $^
 
 28-stringpermutation: 28-stringpermutation.c 
 	$(CC) $(CFLAGS) -o $@ $^
