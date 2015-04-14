@@ -2,7 +2,7 @@ CC=gcc
 CXX=g++
 CFLAGS= -std=c99 -Wall -O2 -g 
 EXECS= 03-findinpartiallysortedmatrix 04-replaceblankinstring 04-extension 05-reverseprintlist \
-08-minnuminrotatedarray 09-fibonacci 28-stringpermutation  \
+08-minnuminrotatedarray 09-fibonacci 10-countoneinbinary 28-stringpermutation  \
 
 all: $(EXECS)
 
@@ -26,6 +26,9 @@ utils:
 
 09-fibonacci: 09-fibonacci.cpp
 	$(CXX) -Wall -O2 -g -o $@ $^
+
+10-countoneinbinary: 10-countoneinbinary.c
+	$(CC) $(CFLAGS) -o $@ $^
 
 28-stringpermutation: 28-stringpermutation.c 
 	$(CC) $(CFLAGS) -o $@ $^
