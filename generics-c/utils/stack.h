@@ -11,12 +11,12 @@ typedef struct {
 	int type_size; //元素类型的字节大小
 } stack_t;
 
+
 /*为栈分配一定容量的内存*/
 stack_t *stack_alloc(int capacity,int type_size);
 stack_t *stack_alloc_default(int type_size);
 
 int stack_size(stack_t *st);
-
 int stack_empty(stack_t *st);
 
 /*释放栈内存*/
