@@ -13,7 +13,7 @@
 - [bst.c](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/search/bst.c) ：实现二叉查找树的各种操作: 
 - [bst_test.c](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/search/bst_test.c) ：测试二叉查找树的操作和时间消耗(测试用例并不全面): 
 
-注意在实现之后使用[Valgrind](http://valgrind.org/docs/manual/quick-start.html)工具检查程序内存是否存在问题,命令如下:
+注意：在实现后务必使用[Valgrind](http://valgrind.org/docs/manual/quick-start.html)工具检查程序内存使用是否存在问题,命令如下:
 
 ```
 valgrind --leak-check=yes program arg1 arg2 ...
