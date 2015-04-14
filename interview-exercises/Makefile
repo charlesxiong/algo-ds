@@ -1,7 +1,8 @@
 CC=gcc
 CXX=g++
-CFLAGS= -std=c99 -Wall -O2 -g 
+CFLAGS= -std=c99 -Wall -O -g 
 EXECS= 03-findinpartiallysortedmatrix 04-replaceblankinstring 04-extension 05-reverseprintlist \
+07-queuewithtwostacks 07-stackwithtwoqueues \
 08-minnuminrotatedarray 09-fibonacci 10-countoneinbinary 28-stringpermutation  \
 
 all: $(EXECS)
@@ -21,11 +22,17 @@ utils:
 05-reverseprintlist: 05-reverseprintlist.c ./utils/linklist.o
 	$(CC) $(CFLAGS) -o $@ $^
 
+07-queuewithtwostacks: 07-queuewithtwostacks.cpp
+	$(CXX) -Wall -O -g -o $@ $^
+
+07-stackwithtwoqueues: 07-stackwithtwoqueues.cpp
+	$(CXX) -Wall -O -g -o $@ $^
+
 08-minnuminrotatedarray: 08-minnuminrotatedarray.c
 	$(CC) $(CFLAGS) -o $@ $^
 
 09-fibonacci: 09-fibonacci.cpp
-	$(CXX) -Wall -O2 -g -o $@ $^
+	$(CXX) -Wall -O -g -o $@ $^
 
 10-countoneinbinary: 10-countoneinbinary.c
 	$(CC) $(CFLAGS) -o $@ $^
