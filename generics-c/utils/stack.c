@@ -48,7 +48,7 @@ void stack_push(stack_t *st,void *elt){
 		st->capacity=stack_size(st)*2;
 		st->data=realloc(st->data,st->capacity*st->type_size);
 	}
-	void *elt_pos=(char *)st->data+st->top*st->type_size; //取下一个栈顶元素的位置
+	void *elt_pos=(char *)st->data+st->top*st->type_size; //取下一个栈顶元素的位置，强制转换为字节表示
 	copy(elt_pos,elt,st->type_size);
 	st->top++;
 }
