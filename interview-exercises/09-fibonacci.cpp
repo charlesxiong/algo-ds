@@ -101,20 +101,20 @@ void test(const char *testname,unsigned int n,long long expected){
 	if(testname !=NULL) {
 		printf("\n%s: \n",testname);
 		if(fib_solution1(n)==expected) {
-			printf("solution 1 using recursion method passed \n");
+			printf("Solution 1 using recursion method passed \n");
 		} else {
-			printf("solution 1 using recursion method failed \n");
+			printf("Solution 1 using recursion method failed \n");
 		}
 		if(fib_solution2(n)==expected){
-			printf("solution 2 using iteration(loop) method passed \n");
+			printf("Solution 2 using iteration(loop) method passed \n");
 		} else {
-			printf("solution 2 using iteration(loop) method failed \n");
+			printf("Solution 2 using iteration(loop) method failed \n");
 		}
 
 		if(fib_solution3(n)==expected){
-			printf("solution 3 using matrix multipower & divide/conquer method passed \n");
+			printf("Solution 3 using matrix multipower & divide/conquer method passed \n");
 		} else {
-			printf("solution 3 using matrix multipower & divide/conquer method failed \n");
+			printf("Solution 3 using matrix multipower & divide/conquer method failed \n");
 		}
 	}
 }
