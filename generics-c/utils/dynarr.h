@@ -1,6 +1,8 @@
 #ifndef _DYNARR_H_
 #define _DYNARR_H_
 
+#include <stdbool.h>
+
 #define DEFAULT_CAPACITY 16
 
 /**
@@ -28,9 +30,9 @@ array_t *array_alloc_default(int type_size,int (*comp)(const void *,const void *
 void array_free(array_t *arr);
 
 
-int array_empty(array_t *arr);
+bool array_empty(array_t *arr);
 
-int array_full(array_t *arr);
+bool array_full(array_t *arr);
 
 int array_size(array_t *arr);
 
