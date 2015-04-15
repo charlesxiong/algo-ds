@@ -4,6 +4,7 @@
 #include <string.h>
 
 
+
 /*为队列分配一定容量的内存*/
 queue_t *queue_alloc(int capacity,int type_size){
 	queue_t *qt=malloc(sizeof(queue_t));
@@ -28,12 +29,12 @@ void queue_free(queue_t *qt){
 int queue_size(queue_t *qt){
 	return (qt->rear+qt->capacity-qt->front)%(qt->capacity);
 }
-int queue_empty(queue_t *qt){
-	return (qt->front==qt->rear)?1:0;
+bool queue_empty(queue_t *qt){
+	return (qt->front==qt->rear)?true:false;
 }
 
-int queue_full(queue_t *qt){
-	return ((qt->rear+1)%(qt->capacity)==qt->front)?1:0;
+bool queue_full(queue_t *qt){
+	return ((qt->rear+1)%(qt->capacity)==qt->front)?true:false;
 }
 
 /****************辅助函数**********************/
