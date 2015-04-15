@@ -25,12 +25,12 @@ void array_free(array_t *arr){
 	free(arr);
 }
 
-int array_empty(array_t *arr){
-	return (arr->index==0)?1:0;
+bool array_empty(array_t *arr){
+	return (arr->index==0)?true:false;
 }
 
-int array_full(array_t *arr){
-	return (arr->index==arr->capacity)?1:0;
+bool array_full(array_t *arr){
+	return (arr->index==arr->capacity)?true:false;
 }
 
 int array_size(array_t *arr){
@@ -101,7 +101,7 @@ void array_qsort(array_t *arr,int left,int right){
  * 默认范围内，保持不变；超过容量，则扩充
  */
 void array_push(array_t *arr,void *elt){
-	if(array_full(arr)==1){
+	if(array_full(arr)){
 		/*实现复制函数*/
 		void *new_data=malloc(arr->type_size*arr->capacity*2);
 		void *src;
