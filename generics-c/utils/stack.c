@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h> //memcpy
 
+
 /*为栈分配一定容量的内存*/
 stack_t *stack_alloc(int capacity,int type_size){
 	stack_t *st=malloc(sizeof(stack_t));
@@ -27,8 +28,8 @@ int stack_size(stack_t *st){
 	return st->top;
 }
 
-int stack_empty(stack_t *st){
-	return (st->top==0)?1:0;
+bool stack_empty(stack_t *st){
+	return (st->top==0)?true:false;
 }
 
 /****************辅助函数**********************/
