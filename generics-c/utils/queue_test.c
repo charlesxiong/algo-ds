@@ -31,7 +31,7 @@ int main(){
 	enqueue(qt,&arr[7]);
 	enqueue(qt,&arr[8]);
 	enqueue(qt,&arr[9]);
-	while(queue_empty(qt)==0){
+	while(!queue_empty(qt)){
 		cur=dequeue(qt);
 		printf("%c\n",cur->key);
 	}
