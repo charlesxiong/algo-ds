@@ -1,5 +1,6 @@
 #ifndef _QUEUE_H_
 #define _QUEUE_H_
+#include <stdbool.h>
 
 #define DEFAULT_CAPACITY 16
 
@@ -26,8 +27,8 @@ queue_t *queue_alloc_default(int type_size);
 void queue_free(queue_t *qt);
 
 int queue_size(queue_t *qt);
-int queue_empty(queue_t *qt);
-int queue_full(queue_t *qt);
+bool queue_empty(queue_t *qt);
+bool queue_full(queue_t *qt);
 
 /*入队*/
 void enqueue(queue_t *qt,void *elt);
