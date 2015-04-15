@@ -1,10 +1,13 @@
 CC=gcc
 CFLAGS= -std=c11 -Wall -O -g
-EXECS= timer_test linklist_test stack_test queue_test bintree_test 
+EXECS= timer_test dynarr_test linklist_test stack_test queue_test bintree_test 
 
 all: $(EXECS)
 
 timer_test: timer_test.c timer.o 
+	$(CC) $(CFLAGS) -o $@ $^
+
+dynarr_test: dynarr_test.c dynarr.o
 	$(CC) $(CFLAGS) -o $@ $^
 
 linklist_test: linklist_test.c linklist.o 
@@ -20,6 +23,7 @@ bintree_test: bintree_test.c bintree.o
 	$(CC) $(CFLAGS) -o $@ $^
 
 timer.o: timer.c timer.h
+dynarr.o: dynarr.c dynarr.h
 linklist.o: linklist.c linklist.h
 stack.o: stack.c stack.h
 queue.o: queue.c queue.h
