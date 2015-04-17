@@ -33,7 +33,7 @@ int main(){
 	
 	printf("使用位图排序后的数据:\n");
 
-	/*查询该数是否在数组中，若是很容易有序输出*/
+	/*查询该数是否在数组中，很容易保证有序输出*/
 	for(i=0;i<MAX;i++){
 		if(bitmap_query(bm,i)){
 			printf("%d ",i);
