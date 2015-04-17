@@ -72,7 +72,7 @@ dlist_node_t *dlist_find_pos(dlist_t *l,int pos){
 	}
 
 	dlist_node_t *cur=l->head->next;
-	int j=1;//计数从0开始表示
+	int j=1;//计数从1开始表示
 	while(cur!=l->head){ //链表为空的标志
 		if(j==pos){
 			break;
