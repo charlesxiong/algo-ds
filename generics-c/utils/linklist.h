@@ -1,6 +1,8 @@
 #ifndef _LINKLIST_H_
 #define _LINKLIST_H_
 
+#include <stdlib.h>
+
 typedef struct list_node {
 	void *item;
 	struct list_node *next;
@@ -23,22 +25,22 @@ void slist_free(slist_t *l);
 void *slist_find(slist_t *l,void *item);
 
 /*在单链表尾部添加元素*/
-void slist_insert_end(slist_t *l,void *item);
+void slist_push_back(slist_t *l,void *item);
 
 /*在单链表头部添加元素*/
-void slist_insert_begin(slist_t *l,void *item);
+void slist_push_front(slist_t *l,void *item);
 
 /*在单链表某位置pos添加元素*/
-void slist_insert_middle(slist_t *l,void *item,int pos);
+void slist_insert(slist_t *l,void *item,int pos);
 
 /*在单链表尾部删除元素,若存在，返回被删除的元素键值，否则返回NULL*/
-void *slist_delete_end(slist_t *l);
+void *slist_pop_back(slist_t *l);
 
 /*在单链表头部删除元素，若存在返回被删除的元素键值，否则返回NULL*/
-void *slist_delete_begin(slist_t *l);
+void *slist_pop_front(slist_t *l);
 
 /*在单链表中找到第一个含item值的节点并删除此节点*/
-void *slist_delete_middle(slist_t *l,void *item);
+void *slist_delete(slist_t *l,void *item);
 
 
 static inline list_node_t *new_list_node(void *item){
