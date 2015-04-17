@@ -22,41 +22,46 @@ void slist_print(slist_t *l){
 }
 
 int main(){
+	/*创建一个单链表*/
 	slist_t *l=slist_alloc(int_cmp);
 	int arr[MAX_LEN];
 	int *res,*val;
 	//srand(time(NULL));
 	int j=0;
+
+	/*在单链表尾部或头部插入元素*/
 	printf("\n测试从单链表尾部或头部插入:\n");
 	while(j<MAX_LEN){
 		arr[j]= rand() % 100;
-		//printf(" %d ",arr[j]);
 		val=&arr[j];
-		slist_insert_end(l,val);
+		slist_push_back(l,val);
 		j++;
 	}
 	slist_print(l);
 
+	/*在单链表尾部删除元素*/
 	printf("\n测试从单链表尾部删除:\n");
-	res=slist_delete_end(l);
+	res=slist_pop_back(l);
 	if(res)
 		printf("%d Deleted \n",*res);
 	else
 		printf("Failed\n");
 	slist_print(l);
 
+	/*在单链表头部删除元素*/
 	printf("\n测试从单链表头部删除:\n");
-	res=slist_delete_begin(l);
+	res=slist_pop_front(l);
 	if(res)
 		printf("%d Deleted \n",*res);
 	else
 		printf("Failed\n");
 	slist_print(l);
 
+	/*在单链表某位置插入元素*/
 	printf("\n测试从单链表中间删除:\n");
 	for(j=MAX_LEN/2;j<MAX_LEN;j++){
 		val=&arr[j];
-		res=slist_delete_middle(l,val);
+		res=slist_delete(l,val);
 		if(res)
 			printf("%d Deleted \n",*res);
 		else
@@ -65,7 +70,7 @@ int main(){
 	printf("%d\n",l->n);
 	slist_print(l);
 	
-	
+	/*释放单链表内存*/
 	slist_free(l);
 	return 0;
 }
