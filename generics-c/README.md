@@ -34,7 +34,7 @@ valgrind --leak-check=yes program arg1 arg2 ...
 - [二叉树](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/utils/bintree.c)
 - [线索化二叉树](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/utils/tbt.c)
 
-另外在排序实现中，它提供了常见的插入排序(直接插入排序、折半插入排序、希尔排序)、交换排序(冒泡排序、快速排序)、选择排序(简单选择排序、堆排序)、二路归并排序等比较排序，还包括了一些非基于比较的排序算法如计数排序、计数排序、桶排序等。
+另外在排序实现中，它提供了常见的插入排序(直接插入排序、折半插入排序、希尔排序)、交换排序(冒泡排序、快速排序)、选择排序(简单选择排序、堆排序)、二路归并排序等比较排序，还包括了一些非基于比较的排序算法如计数排序、基数排序、桶排序等。
 
 - [排序]()
 
