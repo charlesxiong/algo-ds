@@ -74,6 +74,11 @@ void bt_preorder_rec(btree_node_t *cur, cb visit) {
 	bt_preorder_rec(cur->right,visit);
 }
 
+/*先序遍历，栈*/
+void bt_preorder_iter(btree_t *t, cb visit){
+	
+}
+
 /*中序遍历，递归*/
 void bt_inorder(btree_t *t, cb visit) {
 	bt_inorder_rec(t->root,visit);
@@ -86,6 +91,11 @@ void bt_inorder_rec(btree_node_t *cur, cb visit) {
 	bt_inorder_rec(cur->right,visit);
 }
 
+/*中序遍历，栈*/
+void bt_inorder_iter(btree_t *t, cb visit){
+
+}
+
 /*后序遍历，递归*/
 void bt_postorder(btree_t *t, cb visit) {
 	bt_postorder_rec(t->root,visit);
@@ -95,5 +105,30 @@ void bt_postorder_rec(btree_node_t *cur, cb visit) {
 	bt_postorder_rec(cur->left,visit);
 	bt_postorder_rec(cur->right,visit);
 	visit(cur);
+}
+
+/*后序遍历，栈*/
+void bt_postorder_iter(btree_t *t, cb visit){
+	
+}
+
+/*层次序遍历，队列*/
+void bt_levelorder(btree_t *t,cb visit){
+
+}
+
+/*Morris先序遍历*/
+void bt_morris_preorder(btree_t *t, cb visit){
+
+}
+
+/*Morris中序遍历*/
+void bt_morris_inorder(btree_t *t, cb visit){
+
+}
+
+/*Morris后序遍历*/
+void bt_morris_postorder(btree_t *t, cb visit){
+	
 }
 
