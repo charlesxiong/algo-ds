@@ -16,7 +16,6 @@ public class LinkedQueue<Item> implements Iterable<Item> {
 		Node next;
 	}
 	
-	
 	/*初始化空FIFO队列*/
 	public LinkedQueue() {
 		first=null;
