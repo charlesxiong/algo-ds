@@ -138,8 +138,6 @@ void bt_inorder_iter(btree_t *t, cb visit){
 		}
 	}
 	free(stack);
-
-	
 }
 
 /*后序遍历，递归*/
@@ -153,8 +151,9 @@ void bt_postorder_rec(btree_node_t *cur, cb visit) {
 	visit(cur);
 }
 
-/*后序遍历，栈*/
+
 /**
+ * 基于栈的后序遍历
  * 用栈存储节点时，必须分清返回根结点时：是从左子树返回的还是从右子树的返回的
  * 这里用一个pre指针记录最近刚访问过的节点
  * 当一直往左直到左孩子为空时,判断当前节点的右孩子是否为空或者是否已访问过
