@@ -60,7 +60,7 @@ void bt_inorder_iter(btree_t *t, cb visit);
 /*后序遍历，栈*/
 void bt_postorder_iter(btree_t *t, cb visit);
 
-/*层次序遍历，栈*/
+/*层次序遍历，队列*/
 void bt_levelorder(btree_t *t,cb visit);
 
 /*Morris先序遍历*/
