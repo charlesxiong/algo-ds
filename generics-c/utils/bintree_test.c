@@ -38,17 +38,35 @@ int main(){
 	t->root->right=new_btree_node(&arr[2]);
 	t->root->right->left=new_btree_node(&arr[3]);
 	t->root->right->right=new_btree_node(&arr[4]);
+	t->n=5;
+	printf("%d\n",bt_size(t));
 
 	printf("先序遍历(递归): ");
 	bt_preorder(t,visit);
+	printf("\n");
+
+	printf("先序遍历(非递归): ");
+	bt_preorder_iter(t,visit);
 	printf("\n");
 
 	printf("中序遍历(递归): ");
 	bt_inorder(t,visit);
 	printf("\n");
 
+	printf("中序遍历(非递归): ");
+	bt_inorder_iter(t,visit);
+	printf("\n");
+
 	printf("后序遍历(递归): ");
 	bt_postorder(t,visit);
+	printf("\n");
+
+	printf("后序遍历(非递归): ");
+	bt_postorder_iter(t,visit);
+	printf("\n");
+
+	printf("层次序遍历(队列): ");
+	bt_levelorder(t,visit);
 	printf("\n");
 
 	bt_free(t);
