@@ -31,6 +31,8 @@ btree_node_t *new_btree_node(void *item);
  */
 void bt_setchild(btree_node_t **parent,void *item,int tag);
 
+int bt_size(btree_t *t);
+
 
 /**************************Traversal**********************************/
 /**
