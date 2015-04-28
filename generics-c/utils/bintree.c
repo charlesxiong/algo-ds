@@ -213,6 +213,7 @@ void bt_levelorder(btree_t *t,cb visit){
 				queue[rear]=cur->right;//入队
 			}
 		}
+		free(queue);
 	}
 }
 
@@ -322,7 +323,6 @@ void reverse_branch(btree_node_t *from,btree_node_t *to,cb visit){
 }
 
 
-
 /**
  * Morris后续遍历稍微麻烦点：
  * 它必须保证在访问某个当前节点时，左右子树的所有左孩子必须先被访问;而右孩子的输出从底部往顶部逆向访问就行
@@ -335,7 +335,7 @@ void reverse_branch(btree_node_t *from,btree_node_t *to,cb visit){
  */
 void bt_morris_postorder(btree_t *t, cb visit){
 	if(t->root){
-		btree_node_t *rec=new_btree_node(NULL);
+		btree_node_t *rec=malloc(sizeof(btree_node_t));
 		rec->left=t->root; //创建一个dummy结点，它的左孩子指向根结点
 		btree_node_t *cur=rec;//从虚拟根结点开始遍历
 		btree_node_t *pre;
@@ -361,7 +361,7 @@ void bt_morris_postorder(btree_t *t, cb visit){
 
 			}
 		}
-
+		free(rec);
 	}
 }
 
