@@ -39,7 +39,7 @@ int main(){
 	t->root->right->left=new_btree_node(&arr[3]);
 	t->root->right->right=new_btree_node(&arr[4]);
 	t->n=5;
-	printf("%d\n",bt_size(t));
+	
 
 	printf("先序遍历(递归): ");
 	bt_preorder(t,visit);
@@ -49,6 +49,10 @@ int main(){
 	bt_preorder_iter(t,visit);
 	printf("\n");
 
+	printf("Morris中序遍历(O(1)空间): ");
+	bt_morris_preorder(t,visit);
+	printf("\n\n");
+
 	printf("中序遍历(递归): ");
 	bt_inorder(t,visit);
 	printf("\n");
@@ -56,6 +60,10 @@ int main(){
 	printf("中序遍历(非递归): ");
 	bt_inorder_iter(t,visit);
 	printf("\n");
+
+	printf("Morris中序遍历(O(1)空间): ");
+	bt_morris_inorder(t,visit);
+	printf("\n\n");
 
 	printf("后序遍历(递归): ");
 	bt_postorder(t,visit);
@@ -65,9 +73,15 @@ int main(){
 	bt_postorder_iter(t,visit);
 	printf("\n");
 
+	printf("Morris后序遍历(O(1)空间): ");
+	bt_morris_postorder(t,visit);
+	printf("\n\n");
+
 	printf("层次序遍历(队列): ");
 	bt_levelorder(t,visit);
 	printf("\n");
+
+	
 
 	bt_free(t);
 
