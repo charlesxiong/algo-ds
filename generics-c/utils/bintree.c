@@ -81,7 +81,7 @@ void bt_preorder_rec(btree_node_t *cur, cb visit) {
 
 /**
  * 基于栈的VLR先序遍历
- * 整体思路：先入栈根节点，然后再判断栈是否为空：不为空，出栈当前元素，并按照左右子树顺序分别入栈
+ * 整体思路：先入栈根节点，然后再判断栈是否为空：不为空，出栈当前元素，并按照右左子树顺序分别入栈
  * 该方法可借助栈的操作，如下类似于栈的实现方式
  * 入栈顺序: VRL
  */
@@ -193,8 +193,8 @@ void bt_postorder_iter(btree_t *t, cb visit){
  */
 void bt_levelorder(btree_t *t,cb visit){
 	if(t->root){
-		int maxsize=t->n;
-		btree_node_t **queue=malloc(sizeof(btree_node_t *)*(t->n));
+		int maxsize=t->n+1;//使用循环队列浪费1个空间
+		btree_node_t **queue=malloc(sizeof(btree_node_t *)*maxsize);
 		btree_node_t *cur;
 		int front=0;
 		int rear=0;
@@ -243,7 +243,7 @@ void bt_morris_preorder(btree_t *t, cb visit){
 				if(tmp->right==NULL){ //表明右子树未被访问，访问当前节点，更新线索，转向左孩子
 					visit(cur); //仅这一行位置与中序不同
 					tmp->right=cur;
-					pre=cur;//标记当前节点被访问过(这个与visit函数在同一个代码都安内)
+					pre=cur;//标记当前节点被访问过(这个与visit函数在同一个代码段内)
 					cur=cur->left;
 				} else { //表明左子树已被访问，重置线索，转向右孩子
 					tmp->right=NULL;
