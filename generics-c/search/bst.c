@@ -218,11 +218,9 @@ void *bst_delete(bst_t *t,void *item) {
 /*删除BST树中最小的键值结点*/
 void *bst_delete_min(bst_t *t){
 	bst_node_t *cur,*prev;
-	int (*comp)(const void *,const void *);
 	prev=NULL;
 	if(t->root){
-		cur=t->root;
-		comp=t->comp;
+		cur=t->root;	
 		while(cur->left){
 			prev=cur;
 			cur=cur->left;
