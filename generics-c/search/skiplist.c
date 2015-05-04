@@ -20,7 +20,7 @@ skiplist_node_t *new_skiplist_node(int level,void *item){
  * 定义跳表最大层次数max_level,
  * 随机生成节点层次的概率为prob
  * level值为1..max_level
- * 这种随机数生成效果并不是很好，可能会出现中间某些层次干脆
+ * 这种随机数生成效果并不是很好，可能会出现中间某些层次和高层次元素完全相同
  */
 int rand_level(double prob,int max_level){
 	int level;
@@ -45,8 +45,8 @@ int rand_level1(int max_level){
 		bits=  bits>>1;
 	}
 
-	if(h>max){
-		return max;
+	if(h>max_level){
+		h=max_level;
 	}
 	return h;
 }
