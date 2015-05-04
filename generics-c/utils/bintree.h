@@ -74,6 +74,7 @@ void bt_morris_inorder(btree_t *t, cb visit);
 /*Morris后序遍历*/
 void bt_morris_postorder(btree_t *t, cb visit);
 
+/****************辅助函数**********************/
 
 
 #endif
