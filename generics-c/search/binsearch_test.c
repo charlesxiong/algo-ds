@@ -93,7 +93,6 @@ void bintest(int len){
 
 
 void compare_algo(int len,int tests){
-	item_t x;
 	item_t *arr=malloc(sizeof(item_t)*len);
 
 	/*随机生成数据，并进行排序*/
