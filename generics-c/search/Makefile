@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS= -std=c11 -Wall -O2 -g 
-EXECS=bsearch_test bst_test uf_test sl_test
+EXECS=bsearch_test bst_test uf_test sl_test hashtbl_test
 
 all: $(EXECS)
 
@@ -19,10 +19,14 @@ sl_test: skiplist_test.c skiplist.o
 uf_test: uf_test.c uf.o 
 	$(CC) $(CFLAGS) -o $@ $^
 
+hashtbl_test: hashtbl_test.c hashtbl.o
+	$(CC) $(CFLAGS) -o $@ $^
+
 binsearch.o: binsearch.c binsearch.h
 bst.o: bst.c bst.h
 skiplist.o: skiplist.c skiplist.h
 uf.o: uf.c uf.h
+hashtbl.o: hashtbl.c hashtbl.h
 
 clean:
 	cd ../utils; $(MAKE) clean
