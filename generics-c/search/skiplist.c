@@ -128,8 +128,6 @@ void *skiplist_insert(skiplist_t *l,void *item){
 		l->level=level; //更新自己的层级数
 	}
 	skiplist_node_t *tmp=new_skiplist_node(level,item);
-	printf("%d ",level);
-
 	/**
 	 * 调整前向指针的指向，插入新结点
 	 * 问题就出现在这里，注意如果生成的level级别较低，只需要在从0..level的级别进行插入，切记不能使用l->level
