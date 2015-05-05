@@ -54,7 +54,7 @@ valgrind --leak-check=yes program arg1 arg2 ...
 - [2-3树]()
 - [红黑树]()
 - [跳跃表](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/search/skiplist.c)
-- [单词查找树-Trie树]()
+- [Trie树]()
 - [数字查找树]()
 - [基数排序树]()
 - [最小堆]()
