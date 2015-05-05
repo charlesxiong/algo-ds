@@ -170,7 +170,5 @@ void hashtbl_foreach(hash_tbl_t *tbl,cb visit){
 			}
 			printf("\n");
 		}
-		
 	}
-
 }
