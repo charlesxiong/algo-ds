@@ -30,9 +30,10 @@ valgrind --leak-check=yes program arg1 arg2 ...
 - [双向链表](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/utils/dlinklist.c)
 - [栈](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/utils/stack.c)
 - [队列](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/utils/queue.c)
-- [位示图](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/utils/bitmap.c)
 - [二叉树](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/utils/bintree.c)
-- [线索化二叉树](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/utils/tbt.c)
+- [位示图](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/utils/bitmap.c)
+
+
 
 另外在排序实现中，它提供了常见的插入排序(直接插入排序、折半插入排序、希尔排序)、交换排序(冒泡排序、快速排序)、选择排序(简单选择排序、堆排序)、二路归并排序等比较排序，还包括了一些非基于比较的排序算法如计数排序、基数排序、桶排序等。
 
@@ -48,12 +49,17 @@ valgrind --leak-check=yes program arg1 arg2 ...
 
 - [二分查找](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/search/binsearch.c)
 - [二叉查找树](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/search/bst.c)
+- [散列表](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/search/hashtbl.c)
+- [AVL树]()
+- [2-3树]()
+- [红黑树]()
+- [跳跃表](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/search/skiplist.c)
+- [单词查找树-Trie树]()
+- [数字查找树]()
+- [基数排序树]()
+- [最小堆]()
+- [最大堆]()
 - [并查集](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/search/uf.c)
-- 散列表
-- 最小堆
-- 最大堆
-- 跳跃表
-- AVL树
 
 
 -----
