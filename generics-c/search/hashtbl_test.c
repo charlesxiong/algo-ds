@@ -93,7 +93,6 @@ void test(){
 	printf("\n========删除操作后散列表的遍历========\n");
 	hashtbl_foreach(tbl,visit);
 
-
 	printf("\n========释放散列表内存========\n");
 	hashtbl_free(tbl);
 	printf("\n========释放散列表内存后散列表的遍历========\n");
