@@ -107,7 +107,7 @@ valgrind --leak-check=yes program arg1 arg2 ...
 
 ----
 
-# Implemenation in Java
+# Implementation in Java
 
 ---
 
