@@ -40,6 +40,7 @@ public class FreqCounter {
 		StdOut.println(max+" "+st.get(max));
 		StdOut.println(timer.elapsedTime());
 	}
+	
 	public static void main(String[] args) {
 		test("tinytinyTale.txt",1);
 		test("tinyTale.txt",1);
