@@ -33,6 +33,8 @@
 - [NOCOW](http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE)
 
 
+---
+
 # Implementation in C
 
 它实现的数据结构,如图下(待扩充):
@@ -103,7 +105,11 @@ valgrind --leak-check=yes program arg1 arg2 ...
 
 **String**
 
+----
+
 # Implemenation in Java
+
+---
 
 # Algorithm Design
 
