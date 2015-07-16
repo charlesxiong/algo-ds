@@ -91,9 +91,16 @@ void test1() {
 	for(int i = 0; i < n ;i++) {
 		scanf("%d",&arr[i]);
 	}
-	quick_sort_int(arr,0,n-1);
+	//quick_sort_int(arr,0,n-1);
+	// int *help = malloc(sizeof(int) * (n+1)); //辅助数组
+	// merge_sort_int(arr,help,0,n-1);
+	// print(arr,0,n - 1);
+	// free(help);
+
+	merge_sort_inplace(arr,0,n-1);
 	print(arr,0,n - 1);
 	free(arr);
+	
 }
 
 /**
@@ -125,6 +132,6 @@ void test3() {
 
 
 int main() {
-	test3();
+	test1();
 	return 0;
 }

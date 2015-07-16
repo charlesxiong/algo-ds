@@ -21,8 +21,8 @@ void build_max_heap(int *arr,int len);
 void heap_sort_int(int *arr,int n);
 
 /*归并排序*/
-void merge_sort_int(int *arr,int left,int right);
-void merget_sort_int_inplace(int *arr,int left,int right);
+void merge_sort_int(int *arr,int *help,int left,int right);
+void merge_sort_inplace(int *arr,int left,int right);
 
 /*非比较排序*/
 void counting_sort_int(int *arr,int n);
