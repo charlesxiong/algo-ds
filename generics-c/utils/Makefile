@@ -1,7 +1,8 @@
 CC=gcc
-CFLAGS= -std=c11 -Wall -O -g
+CFLAGS= -std=c11 -Wall -g -O2
 EXECS= timer_test dynarr_test linklist_test dlinklist_test \
-stack_test queue_test bintree_test bitmap_test \
+stack_test queue_test bintree_test bitmap_test sort_test \
+
 
 all: $(EXECS)
 
@@ -29,6 +30,9 @@ bintree_test: bintree_test.c bintree.o
 bitmap_test: bitmap_test.c bitmap.o
 	$(CC) $(CFLAGS) -o $@ $^
 
+sort_test: sort_test.c sort.o
+	$(CC) $(CFLAGS) -o $@ $^
+
 timer.o: timer.c timer.h
 dynarr.o: dynarr.c dynarr.h
 linklist.o: linklist.c linklist.h
@@ -37,6 +41,7 @@ stack.o: stack.c stack.h
 queue.o: queue.c queue.h
 bintree.o: bintree.c bintree.h
 bitmap.o: bitmap.c bitmap.h
+sort.o: sort.c sort.h
 
 .PHONY: clean
 clean: 
