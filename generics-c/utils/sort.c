@@ -228,6 +228,92 @@ void heap_sort_int(int *arr,int len) {
 	}
 }
 
+/**
+ * 两个有序列表之间的合并，这里两个表是前后相邻的
+ * 只需要复制到辅助数组中，两两比较根据大小关系再放入原始数组中
+ * 有很多变式
+ */
+void merge(int *arr,int *help,int left,int mid,int right) {
+	for(int i = left; i <= right;i++)
+		help[i] = arr[i]; //把A中元素复制到B中,借助B处理
+	int i = left;
+	int j = mid + 1;
+	int k = left;
+	while(i <= mid && j <= right) { //记录有多少个共同的
+		if(help[i] < help[j]) 
+			arr[k++] = help[i++]; //较小值复制到A中
+		else 
+			arr[k++] = help[j++];
+	}
+	while(i <= mid)   arr[k++] = help[i++]; //某表未检测完直接复制
+	while(j <= right) arr[k++] = help[j++];
+}
 
+/**
+ * 时间效率: 有lgn趟归并，每次归并时间为O(n),则时间复杂度为O(nlgn)
+ * 空间效率: merge操作需要辅助空间O(n),建议在merge操作外分配一个大的数组
+ * 是稳定排序，不改变相同关键字记录的相对次序
+ */
+void merge_sort_int(int *arr,int *help,int left,int right) {
+	if(left < right) {
+		int mid = ((right - left) >> 1) + left;
+		merge_sort_int(arr,help,left,mid);
+		merge_sort_int(arr,help,mid + 1,right);
+		merge(arr,help,left,mid,right);
+	}
+}
+
+/*长度为n的数组翻转*/
+void reverse(int *arr,int n) {
+	int i = 0;
+	int j = n - 1;
+	while(i < j) {
+		swap(&arr[i],&arr[j]);
+		i++;
+		j--;
+	}
+}
+
+/**
+ * 将含有n个元素的数组左循环移位i位
+ */
+void rotation_left(int *arr,int n,int i) {
+	reverse(arr,i);
+	reverse(arr + i,n - i);
+	reverse(arr,n);
+}
+
+/**
+ * 
+ * 遍历i元素找到第一个arr[i] > arr[j](start = j),确定该i的位置，也就是说在这之前的元素都小于从j开始的元素
+ * 再遍历j找到第一个元素arr[j] > arr[i](end = j),确定该j的位置，则说明在这之前的元素小于从i开始的元素
+ * 也就是说将第二个序列(start,end-1)的元素都应该在i之前－采用循环移位的办法移到i前面
+ * 例如　0 1 5 6 9 | 2 3 4 7 8
+ * 第一次遍历确定了5和7,然后就把2 3 4循环移位到5 6 9前面，然后i再从5的新位置开始作为第一个序列，
+ * j的位置是第二个序列开始
+ */
+void merge_inplace(int  *arr,int left,int mid,int right) {
+	int i = left,j = mid + 1, k = right;
+	while(i < j && j <= k) {
+		while(i < j && arr[i] <= arr[j]) i++;
+		int step = 0;
+		while(j <= k && arr[j] <= arr[i]) {
+			j++;
+			step++;
+		}
+		//arr+i为子数组，j-i表示子数组元素个数，j-i-step表示左循环移位的位数(把前面的元素移到后面去)
+		rotation_left(arr + i,j- i,j - i - step);
+	}
+}
+
+
+void merge_sort_inplace(int *arr,int left,int right) {
+	if(left < right) {
+		int mid = (left + right) / 2;
+		merge_sort_inplace(arr,left,mid);
+		merge_sort_inplace(arr,mid+1,right);
+		merge_inplace(arr,left,mid,right);
+	}
+}
 
 
