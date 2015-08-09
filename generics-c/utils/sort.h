@@ -3,8 +3,11 @@
 
 #include <stdbool.h>
 
+#define THRESHOLD 20
+
 /*插入排序*/
 void insertion_sort_int(int *arr,int n);
+void binary_insertion_sort_int(int *arr,int n);
 void shell_sort_int(int *arr,int n);
 
 /*交换排序*/
@@ -12,6 +15,10 @@ void bubble_sort_int(int *arr,int n);
 
 int partition(int *arr,int left,int right);
 void quick_sort_int(int *arr,int left,int right);
+void quick_sort_threeway(int *arr,int left,int right);
+void quick_sort_threeway_fast(int *arr,int left,int right);
+
+void optimal_sort_int(int *arr,int left,int right);
 
 /*选择排序*/
 void selection_sort_int(int *arr,int n);

@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "sort.h"
 
+#define RND_MAX 15000
+
 void print(int *arr,int left,int right) {
 	for(int i = left; i<= right;i++)
 		printf("%d ",arr[i]);
@@ -76,7 +78,8 @@ void test() {
 	}
 	//insertion_sort_int(arr,n);
 	//selection_sort_int(arr,n);
-	bubble_sort_int(arr,n);
+	//bubble_sort_int(arr,n);
+	binary_insertion_sort_int(arr,n);
 	print(arr,0,n - 1);
 	free(arr);
 }
@@ -91,13 +94,14 @@ void test1() {
 	for(int i = 0; i < n ;i++) {
 		scanf("%d",&arr[i]);
 	}
-	//quick_sort_int(arr,0,n-1);
+	//quick_sort_threeway(arr,0,n-1);
+	quick_sort_threeway_fast(arr,0,n-1);
 	// int *help = malloc(sizeof(int) * (n+1)); //辅助数组
 	// merge_sort_int(arr,help,0,n-1);
 	// print(arr,0,n - 1);
 	// free(help);
 
-	merge_sort_inplace(arr,0,n-1);
+	//merge_sort_inplace(arr,0,n-1);
 	print(arr,0,n - 1);
 	free(arr);
 	
@@ -131,7 +135,19 @@ void test3() {
 }
 
 
+void test4() {
+	int n;
+	while(scanf("%d",&n) && n != 0) {
+		int arr[n];
+		for(int i = 0; i <= n - 1; i++)
+			arr[i] = rand() % RND_MAX;
+		optimal_sort_int(arr,0,n-1);
+		print(arr,0,n - 1);
+	}
+}
+
+
 int main() {
-	test1();
+	test();
 	return 0;
 }

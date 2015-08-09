@@ -16,6 +16,24 @@ void insertion_sort_int(int *arr,int n) {
 	}
 }
 
+void binary_insertion_sort_int(int *arr,int n) {
+	for(int i = 1;i < n;i++) {
+		int key = arr[i];
+		int left = 0;
+		int right = i - 1;
+		while(left <= right) {
+			int mid = (left + right) / 2;
+			if(key < arr[mid]) 
+				right = mid - 1;
+			 else
+			 	left = mid + 1;
+		}
+		for(int j = i - 1; j >= left; j--)
+			arr[j + 1] = arr[j];
+		arr[left] = key;
+	}
+}
+
 /**
  * 首先取长度的一半作为增量的步长d1,把表中全部记录分成d1个组
  * 把步长隔d1的记录放在同一组中再进行直接插入排序；
@@ -43,6 +61,26 @@ void swap(int *a,int *b) {
 	*b = tmp;
 }
 
+/*长度为n的数组翻转*/
+void reverse(int *arr,int n) {
+	int i = 0;
+	int j = n - 1;
+	while(i < j) {
+		swap(&arr[i],&arr[j]);
+		i++;
+		j--;
+	}
+}
+
+/**
+ * 将含有n个元素的数组左循环移位i位
+ */
+void rotation_left(int *arr,int n,int i) {
+	reverse(arr,i);
+	reverse(arr + i,n - i);
+	reverse(arr,n);
+}
+
 void bubble_sort_int(int *arr,int n) {
 	for(int i = 0; i < n - 1; i++) { //n-1趟冒泡,每次确定一个元素，每次确定小值元素
 		bool flag = false;
@@ -56,6 +94,26 @@ void bubble_sort_int(int *arr,int n) {
 			return ; //表明本次遍历没有交换，则表已经有序
 	}
 }
+
+/**
+　* 三数取中策略: 返回数组的下标
+ */
+int median3(int *arr,int i,int j,int k) {
+	if(arr[i] < arr[j]) {
+		if(arr[j] < arr[k])
+			return j;
+		else {
+			return (arr[i] < arr[k])? k : i;
+		}
+	} else {
+		if(arr[k] < arr[j])
+			return j;
+		else {
+			return (arr[k] < arr[i])? k : i;
+		}
+	}
+}
+
 
 /**
  * 两指针分别从首尾向中间扫描
@@ -140,6 +198,73 @@ void quick_sort_int(int *arr,int left,int right) {
 		quick_sort_int(arr,left,pos - 1);
 		quick_sort_int(arr,pos + 1,right);
 	}
+}
+
+/**
+ * Dijkstra三向快速切分: 用于处理有大量重复元素的情形，减少递归时重复元素的比较的次数
+ * 即遍历数组一次，维护三个指针lt,cur,gt
+ * lt使得arr[0..lt-1]的元素小于v,gt使得arr[gt+1..n-1]的元素大于v
+ * 指针cur使得arr[lt..i-1]的元素等于v,arr[i..gt]的元素仍不确定
+ * 类似荷兰三色旗问题，思路比较简单
+ * 主要是学会掌握用一个工作指针结合两个边界指针进行一次线性遍历，有很多变式
+ * 缺点就是在数组中重复元素不多的情况下比标准的二分法多使用了很多次交换
+ * John Bently等人用一个聪明的方法解决了此问题，使得三向切分的快排比一般的排序方法都要快
+ */
+void quick_sort_threeway(int *arr,int left,int right) {
+	if(left < right) {
+		int lt = left;
+		int cur = left;
+		int gt = right;
+		int pivot = arr[left];
+		while(cur <= gt) {
+			if(arr[cur] == pivot) {
+				cur++;
+			} else if(arr[cur] < pivot) {
+				swap(&arr[cur],&arr[lt]);
+				lt++;
+				cur++;
+			} else {
+				swap(&arr[cur],&arr[gt]);
+				gt--;
+			}
+		} //cur > gt则退出，直接形成了left..lt-1 lt..gt gt+1..right三个区间
+		quick_sort_threeway(arr,left,lt - 1);
+		quick_sort_threeway(arr,gt + 1,right);
+	}
+	
+}
+
+void quick_sort_threeway_fast(int *arr,int left,int right) {
+	if(left < right) {
+		int p = left , q = right + 1; 
+	int pivot = arr[left];
+	int i = left , j = right + 1;
+	while(true) {
+		while(arr[++i] < pivot) 
+			if(i == right) 
+				break;
+		while(arr[--j] > pivot) 
+			if(j == left)
+				break;
+
+		if(i == j && arr[i] == pivot)
+			swap(&arr[++p],&arr[i]);
+		if(i >= j) break;
+
+		swap(&arr[i],&arr[j]);
+		if(arr[i] == pivot)
+			swap(&arr[++p],&arr[i]);
+		if(arr[j] == pivot)
+			swap(&arr[--q],&arr[j]);
+	}
+	i = j + 1;
+	for(int k = left; k <= p; k++) swap(&arr[k],&arr[j--]);
+	for(int k = right; k >= q;k--) swap(&arr[k],&arr[i++]);
+	quick_sort_threeway_fast(arr,left,j);
+	quick_sort_threeway_fast(arr,i,right);
+
+	}
+	
 }
 
 /**
@@ -263,25 +388,7 @@ void merge_sort_int(int *arr,int *help,int left,int right) {
 	}
 }
 
-/*长度为n的数组翻转*/
-void reverse(int *arr,int n) {
-	int i = 0;
-	int j = n - 1;
-	while(i < j) {
-		swap(&arr[i],&arr[j]);
-		i++;
-		j--;
-	}
-}
 
-/**
- * 将含有n个元素的数组左循环移位i位
- */
-void rotation_left(int *arr,int n,int i) {
-	reverse(arr,i);
-	reverse(arr + i,n - i);
-	reverse(arr,n);
-}
 
 /**
  * 
@@ -316,4 +423,23 @@ void merge_sort_inplace(int *arr,int left,int right) {
 	}
 }
 
+
+void optimal_sort_int(int *arr,int left,int right) {
+	int n = right - left + 1;
+	if(n <= THRESHOLD) {
+		insertion_sort_int(arr,n);
+	} else if(n <= 500) { //用三数取中排序
+		int pos = median3(arr,left, left + n / 2,right);
+		swap(&arr[pos],&arr[left]);
+	} else {//采取Tukey ninther 作为pivot元素
+		int eighth = n / 8;
+		int mid = left + n / 2;
+		int m1 = median3(arr,left,left + eighth,left + eighth * 2);
+		int m2 = median3(arr,mid - eighth,mid,mid + eighth);
+		int m3 = median3(arr,right - eighth * 2,right - eighth,right);
+		int ninther = median3(arr,m1,m2,m3);
+		swap(&arr[ninther],&arr[left]);
+	}
+	quick_sort_threeway_fast(arr,left,right);
+}
 
