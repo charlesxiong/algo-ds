@@ -16,7 +16,6 @@ void Trie::insert(string word) {
 		int index = *iter - ALPHA;
 		if(cur->next[index] == NULL) {
 			cur->next[index] = new trie_node_t();
-			size++;
 		}
 		cur = cur->next[index]; 
 		++iter; /*移到下一个字符*/
