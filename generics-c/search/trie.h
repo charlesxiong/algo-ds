@@ -38,7 +38,7 @@ struct trie_node_t {
 class Trie {
 public:
 
-	Trie():root(new trie_node_t()),size(1) {}
+	Trie():root(new trie_node_t()) {}
 
 	~Trie() {
 		delete_trie_node(root);
@@ -67,7 +67,7 @@ public:
 
 private:
 	trie_node_t *root;
-	int size;
+
 
 private:
 	void delete_trie_node(trie_node_t *root);
