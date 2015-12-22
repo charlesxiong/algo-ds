@@ -1,5 +1,6 @@
 # Introduction
-**基于C和Java实现的数据结构和算法主要分为5类:**　
+
+**基于C实现的数据结构和算法主要分为5类:**　
 * 基本数据结构(动态数组、链表、栈及队列等)
 * 字典类结构(二叉查找树、AVL树、红黑树、哈希表、B-树)
 * 排序算法(快排、堆排序、归并排序等)
@@ -22,13 +23,7 @@
 
 # Implementation in C
 
-它实现的数据结构,如图下(待扩充):
-
-![数据结构](https://github.com/charlesxiong/algo-ds/blob/master/generics-java/images/Selection_036.png)
-
-每个文件夹对应实现不同的功能，例如有基础结构、查找、排序、字符串、图论等。
-
-对于每一个数据结构，它含有3个文件。以二叉查找树为例：
+每个文件夹对应实现不同的功能，例如有基础结构、查找、排序、字符串、图论等。对于每一个数据结构，它含有3个文件。以二叉查找树为例：
 
 - [bst.h](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/search/bst.h) ：头文件定义其数据结构和API
 - [bst.c](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/search/bst.c) ：实现二叉查找树的各种操作: 
@@ -92,18 +87,7 @@ valgrind --leak-check=yes program arg1 arg2 ...
 
 ----
 
-# Implementation in Java
-
----
-
-# Algorithm Design
-
-
----
-
 **参考资料:**
-- [Algorithms,4th Edition](http://algs4.cs.princeton.edu/home/)
-- [Algorithm Design](http://www.amazon.cn/%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%99%E8%82%B2%E5%9B%BD%E5%A4%96%E8%91%97%E5%90%8D%E6%95%99%E6%9D%90%E7%B3%BB%E5%88%97-%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1-%E5%85%8B%E8%8E%B1%E5%9B%A0%E4%BC%AF%E6%A0%BC/dp/B00AX3NRKY/ref=pd_sim_14_1?ie=UTF8&refRID=1KKT6S2ASJSDYVW7MHQ5)
 - [List of data structures](http://en.wikipedia.org/wiki/List_of_data_structures)
 - [The lesser known but useful data structures](http://stackoverflow.com/questions/500607/what-are-the-lesser-known-but-useful-data-structures?page=1&tab=votes#tab-top)
 - [The Archive of Interesting Code](http://www.keithschwarz.com/interesting/)
