@@ -1,14 +1,14 @@
 CC=gcc
 CFLAGS= -std=c11 -Wall -g -O2
-EXECS= timer_test 
+EXECS= stopwatch_test 
 
 
 all: $(EXECS)
 
-timer_test: timer_test.c timer.o 
+stopwatch_test: stopwatch_test.c stopwatch.o 
 	$(CC) $(CFLAGS) -o $@ $^
 
-timer.o: timer.c timer.h
+stopwatch.o: stopwatch.c stopwatch.h
 
 
 .PHONY: clean
