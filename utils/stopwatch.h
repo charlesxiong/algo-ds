@@ -1,5 +1,5 @@
-#ifndef _TIMER_H_
-#define _TIMER_H_
+#ifndef _STOPWATCH_H_
+#define _STOPWATCH_H_
 #include <time.h>
 
 /**

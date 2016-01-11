@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "timer.h"
+#include "stopwatch.h"
 
 
 #if USE_HI_RES_TIME

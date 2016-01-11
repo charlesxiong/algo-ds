@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "timer.h"
+#include "stopwatch.h"
 
 int comp(const void *a,const void *b){
 	return *(int *)a- *(int *)b;

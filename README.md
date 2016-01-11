@@ -1,4 +1,4 @@
-# 数据结构和算法(based on C)
+# 数据结构和算法
 
 * 基本数据结构(动态数组、链表、栈及队列等)
 * 字典类结构(二叉查找树、AVL树、红黑树、哈希表、B-树)
@@ -57,7 +57,7 @@ valgrind --leak-check=yes program arg1 arg2 ...
 - [Trie树](https://github.com/charlesxiong/algo-ds/blob/master/generics-c/string/trie.cpp)
 
 
-# 算法设计策略(based on C++)
+# 算法设计策略
 * 递归与分治策略
 * 动态规划算法
 * 贪心算法
